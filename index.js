@@ -5,7 +5,7 @@ var Emitter = require('events').EventEmitter
 module.exports = loadEquirectangular
 function loadEquirectangular (id, opt) {
   opt = opt || {}
-  var data = getTiles(id, opt.zoom, opt.tiles)
+  var data = getTiles(id, opt.zoom, opt.tiles, opt._urlConstructor, opt._tileData)
 
   var canvas = opt.canvas || document.createElement('canvas')
   var context = canvas.getContext('2d')
